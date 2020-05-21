@@ -1,0 +1,9 @@
+#!/bin/bash
+function _clean {
+    killall java
+    exit 0
+}
+
+trap _clean SIGINT
+
+java Z2Sender 6000 6001 < dane.txt & java Z2Forwarder 6001 6002

@@ -1,0 +1,9 @@
+#!/bin/bash
+function _clean {
+    killall java
+    exit 0
+}
+
+trap _clean SIGINT
+
+java  Z2Sender 4321 4321
